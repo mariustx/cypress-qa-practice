@@ -16,5 +16,12 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 
+Cypress.on('uncaught:exception', (err, runnable) => {
+    // returning false here prevents Cypress from
+    // failing the test
+    // used because it fails when accessing 'https://www.qa-practice.com/'
+    return false;
+});
+
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
